@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class AuthService {
     
@@ -36,9 +37,8 @@ class AuthService {
     }
     
     func registerUser(_ email: String, _ password: String, completionHandler: @escaping Constants.CompletionHandler) {
-        let header = ["Content-Type": "application/json; charset=utf-8"]
         let body: [String: Any] = ["email": email.lowercased(), "password": password]
-        Alamofire.request(Constants.URL.urlRegister, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString { response in
+        Alamofire.request(Constants.URL.urlRegister, method: .post, parameters: body, encoding: JSONEncoding.default, headers: Constants.Headers.standardHeader).responseString { response in
             guard response.result.error == nil else {
                 completionHandler(false)
                 debugPrint(response.result.error as Any)
@@ -46,7 +46,23 @@ class AuthService {
             }
             completionHandler(true)
         }
-        
+    }
+    
+    func loginUser(_ email: String, _ password: String, completionHandler: @escaping Constants.CompletionHandler) {
+        let body: [String: Any] = ["email": email.lowercased(), "password": password]
+        Alamofire.request(Constants.URL.urlLogin, method: .post, parameters: body, encoding: JSONEncoding.default, headers: Constants.Headers.standardHeader).responseJSON { response in
+            guard response.result.error == nil else {
+                completionHandler(false)
+                debugPrint(response.result.error as Any)
+                return
+            }
+            guard let data = response.data else { return }
+            let json = JSON(data: data)
+            self.userEmail = json["user"].stringValue
+            self.authToken = json["token"].stringValue
+            self.isLoggedIn = true
+            completionHandler(true)
+        }
     }
     
 }

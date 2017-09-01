@@ -27,6 +27,11 @@ struct Constants {
     struct URL {
         static let BaseUrl = "https://smackcloneapp.herokuapp.com/v1/"
         static let urlRegister = "\(Constants.URL.BaseUrl)account/register"
+        static let urlLogin = "\(Constants.URL.BaseUrl)account/login"
+    }
+    
+    struct Headers {
+        static let standardHeader = ["Content-Type": "application/json; charset=utf-8"]
     }
     
 }
