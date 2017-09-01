@@ -11,6 +11,8 @@ import Foundation
 struct Constants {
     
     struct Identifiers {
-        static let loginVC = "LoginVC"
+        static let loginVC = "loginVC"
+        static let createAccountVC = "createAccountVC"
+        static let undwindToChannel = "unwindToChannel"
     }
 }
