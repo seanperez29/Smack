@@ -18,4 +18,5 @@ class CreateAccountVC: UIViewController {
     @IBAction func closeButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: Constants.Identifiers.undwindToChannel, sender: nil)
     }
+    
 }
