@@ -28,10 +28,12 @@ struct Constants {
         static let BaseUrl = "https://smackcloneapp.herokuapp.com/v1/"
         static let urlRegister = "\(Constants.URL.BaseUrl)account/register"
         static let urlLogin = "\(Constants.URL.BaseUrl)account/login"
+        static let createUser = "\(Constants.URL.BaseUrl)user/add"
     }
     
     struct Headers {
         static let standardHeader = ["Content-Type": "application/json; charset=utf-8"]
+        static let tokenHeader = ["Authorization": "Bearer \(AuthService.instance.authToken)", "Content-Type": "application/json; charset=utf-8"]
     }
     
 }
