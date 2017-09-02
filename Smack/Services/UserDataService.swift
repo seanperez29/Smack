@@ -33,6 +33,17 @@ class UserDataService {
         self.avatarColor = avatarColor
     }
     
+    func logoutUser() {
+        id = ""
+        avatarColor = ""
+        avatarName = ""
+        email = ""
+        name = ""
+        AuthService.instance.isLoggedIn = false
+        AuthService.instance.userEmail = ""
+        AuthService.instance.authToken = ""
+    }
+    
     func returnUIColor(_ components: String) -> UIColor {
         let scanner = Scanner(string: components)
         let skipped = CharacterSet(charactersIn: "[], ")

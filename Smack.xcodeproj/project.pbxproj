@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		911EC0841F5B16430045C541 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EC0821F5B16430045C541 /* ProfileVC.swift */; };
+		911EC0851F5B16430045C541 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 911EC0831F5B16430045C541 /* ProfileVC.xib */; };
 		914559191F59F399002E0EEE /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914559181F59F399002E0EEE /* RoundedButton.swift */; };
 		9145591D1F5A253A002E0EEE /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9145591C1F5A253A002E0EEE /* UserDataService.swift */; };
 		9145591F1F5A36CD002E0EEE /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9145591E1F5A36CD002E0EEE /* AvatarPickerVC.swift */; };
@@ -14,7 +16,7 @@
 		9146B7811F58E27900D25394 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9146B7801F58E27900D25394 /* ChannelVC.swift */; };
 		914994451F5A4A9D00ACD366 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914994441F5A4A9D00ACD366 /* CircleImage.swift */; };
 		914994471F5A4CE000ACD366 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914994461F5A4CE000ACD366 /* CustomTextField.swift */; };
-		9149944A1F5A519F00ACD366 /* DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914994491F5A519F00ACD366 /* DismissKeyboard.swift */; };
+		9149944A1F5A519F00ACD366 /* DismissExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914994491F5A519F00ACD366 /* DismissExt.swift */; };
 		91B196191F58EB1200831E52 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B196171F58EB1000831E52 /* SWRevealViewController.m */; };
 		91B1961B1F58EEDB00831E52 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1961A1F58EEDB00831E52 /* GradientView.swift */; };
 		91B1961E1F59168E00831E52 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1961D1F59168E00831E52 /* Constants.swift */; };
@@ -25,12 +27,15 @@
 		91CC12201F57CE0500F546EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91CC121E1F57CE0500F546EA /* Main.storyboard */; };
 		91CC12221F57CE0500F546EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91CC12211F57CE0500F546EA /* Assets.xcassets */; };
 		91CC12251F57CE0500F546EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91CC12231F57CE0500F546EA /* LaunchScreen.storyboard */; };
+		91FB18491F5B2339003BC8AC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FB18481F5B2339003BC8AC /* Protocols.swift */; };
 		91FCBB271F591ED00027BC77 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FCBB261F591ED00027BC77 /* CreateAccountVC.swift */; };
 		C2940533E29048FBDD9205C6 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3D53DA9F3DE138FE56D577 /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4D3D53DA9F3DE138FE56D577 /* Pods_Smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		911EC0821F5B16430045C541 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		911EC0831F5B16430045C541 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		914559181F59F399002E0EEE /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		9145591C1F5A253A002E0EEE /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		9145591E1F5A36CD002E0EEE /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
@@ -38,7 +43,7 @@
 		9146B7801F58E27900D25394 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		914994441F5A4A9D00ACD366 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		914994461F5A4CE000ACD366 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		914994491F5A519F00ACD366 /* DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKeyboard.swift; sourceTree = "<group>"; };
+		914994491F5A519F00ACD366 /* DismissExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissExt.swift; sourceTree = "<group>"; };
 		9162EDC01F57D8290046FFFA /* Smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack-Bridging-Header.h"; sourceTree = "<group>"; };
 		91B196171F58EB1000831E52 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		91B196181F58EB1000831E52 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -53,6 +58,7 @@
 		91CC12211F57CE0500F546EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91CC12241F57CE0500F546EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91CC12261F57CE0500F546EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91FB18481F5B2339003BC8AC /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		91FCBB261F591ED00027BC77 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		DA45A3F684277CAA0515177B /* Pods-Smack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.release.xcconfig"; sourceTree = "<group>"; };
 		EDD4B9477FF4F60E3EA4B390 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +84,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		911EC0861F5B166F0045C541 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				911EC0831F5B16430045C541 /* ProfileVC.xib */,
+			);
+			path = XIBs;
+			sourceTree = "<group>";
+		};
 		9146B77D1F58E22A00D25394 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +100,7 @@
 				91B1961F1F591C9400831E52 /* LoginVC.swift */,
 				91FCBB261F591ED00027BC77 /* CreateAccountVC.swift */,
 				9145591E1F5A36CD002E0EEE /* AvatarPickerVC.swift */,
+				911EC0821F5B16430045C541 /* ProfileVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -93,6 +108,7 @@
 		9146B77E1F58E22E00D25394 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				911EC0861F5B166F0045C541 /* XIBs */,
 				91CC121E1F57CE0500F546EA /* Main.storyboard */,
 				91CC12231F57CE0500F546EA /* LaunchScreen.storyboard */,
 				91B1961A1F58EEDB00831E52 /* GradientView.swift */,
@@ -114,7 +130,8 @@
 		914994481F5A519000ACD366 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				914994491F5A519F00ACD366 /* DismissKeyboard.swift */,
+				914994491F5A519F00ACD366 /* DismissExt.swift */,
+				91FB18481F5B2339003BC8AC /* Protocols.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -253,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				911EC0851F5B16430045C541 /* ProfileVC.xib in Resources */,
 				91CC12251F57CE0500F546EA /* LaunchScreen.storyboard in Resources */,
 				91CC12221F57CE0500F546EA /* Assets.xcassets in Resources */,
 				91CC12201F57CE0500F546EA /* Main.storyboard in Resources */,
@@ -317,6 +335,7 @@
 				91CC121D1F57CE0500F546EA /* ChatVC.swift in Sources */,
 				9145591F1F5A36CD002E0EEE /* AvatarPickerVC.swift in Sources */,
 				914559191F59F399002E0EEE /* RoundedButton.swift in Sources */,
+				91FB18491F5B2339003BC8AC /* Protocols.swift in Sources */,
 				914994451F5A4A9D00ACD366 /* CircleImage.swift in Sources */,
 				9146B7811F58E27900D25394 /* ChannelVC.swift in Sources */,
 				9145591D1F5A253A002E0EEE /* UserDataService.swift in Sources */,
@@ -327,7 +346,8 @@
 				914559211F5A3813002E0EEE /* AvatarCell.swift in Sources */,
 				914994471F5A4CE000ACD366 /* CustomTextField.swift in Sources */,
 				91CC121B1F57CE0500F546EA /* AppDelegate.swift in Sources */,
-				9149944A1F5A519F00ACD366 /* DismissKeyboard.swift in Sources */,
+				911EC0841F5B16430045C541 /* ProfileVC.swift in Sources */,
+				9149944A1F5A519F00ACD366 /* DismissExt.swift in Sources */,
 				91B196191F58EB1200831E52 /* SWRevealViewController.m in Sources */,
 				91B1961E1F59168E00831E52 /* Constants.swift in Sources */,
 			);
