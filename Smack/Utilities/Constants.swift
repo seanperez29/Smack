@@ -31,6 +31,7 @@ struct Constants {
         static let urlLogin = "\(Constants.URL.BaseUrl)account/login"
         static let createUser = "\(Constants.URL.BaseUrl)user/add"
         static let findUserByEmail = "\(Constants.URL.BaseUrl)user/byEmail/"
+        static let getChannels = "\(Constants.URL.BaseUrl)channel"
     }
     
     struct Headers {

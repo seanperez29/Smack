@@ -105,7 +105,6 @@ class AuthService {
         let avatarColor = json["avatarColor"].stringValue
         let avatarName = json["avatarName"].stringValue
         let email = json["email"].stringValue
-        print("USER DATA: \(id, name, avatarColor, avatarName, email)")
         UserDataService.instance.setUserData(id, name, email, avatarColor, avatarName)
     }
 }
