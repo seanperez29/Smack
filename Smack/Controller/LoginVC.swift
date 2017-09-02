@@ -13,6 +13,7 @@ class LoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerForKeyboardDismissal()
     }
 
     @IBAction func closeButtonPressed(_ sender: Any) {

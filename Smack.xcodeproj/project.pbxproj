@@ -12,6 +12,9 @@
 		9145591F1F5A36CD002E0EEE /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9145591E1F5A36CD002E0EEE /* AvatarPickerVC.swift */; };
 		914559211F5A3813002E0EEE /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914559201F5A3813002E0EEE /* AvatarCell.swift */; };
 		9146B7811F58E27900D25394 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9146B7801F58E27900D25394 /* ChannelVC.swift */; };
+		914994451F5A4A9D00ACD366 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914994441F5A4A9D00ACD366 /* CircleImage.swift */; };
+		914994471F5A4CE000ACD366 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914994461F5A4CE000ACD366 /* CustomTextField.swift */; };
+		9149944A1F5A519F00ACD366 /* DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914994491F5A519F00ACD366 /* DismissKeyboard.swift */; };
 		91B196191F58EB1200831E52 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B196171F58EB1000831E52 /* SWRevealViewController.m */; };
 		91B1961B1F58EEDB00831E52 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1961A1F58EEDB00831E52 /* GradientView.swift */; };
 		91B1961E1F59168E00831E52 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1961D1F59168E00831E52 /* Constants.swift */; };
@@ -33,6 +36,9 @@
 		9145591E1F5A36CD002E0EEE /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
 		914559201F5A3813002E0EEE /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		9146B7801F58E27900D25394 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
+		914994441F5A4A9D00ACD366 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		914994461F5A4CE000ACD366 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		914994491F5A519F00ACD366 /* DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKeyboard.swift; sourceTree = "<group>"; };
 		9162EDC01F57D8290046FFFA /* Smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack-Bridging-Header.h"; sourceTree = "<group>"; };
 		91B196171F58EB1000831E52 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		91B196181F58EB1000831E52 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -92,6 +98,8 @@
 				91B1961A1F58EEDB00831E52 /* GradientView.swift */,
 				914559181F59F399002E0EEE /* RoundedButton.swift */,
 				914559201F5A3813002E0EEE /* AvatarCell.swift */,
+				914994441F5A4A9D00ACD366 /* CircleImage.swift */,
+				914994461F5A4CE000ACD366 /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -101,6 +109,14 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		914994481F5A519000ACD366 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				914994491F5A519F00ACD366 /* DismissKeyboard.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9162EDBF1F57D7FD0046FFFA /* Supporting Files */ = {
@@ -151,6 +167,7 @@
 		91CC12191F57CE0500F546EA /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				914994481F5A519000ACD366 /* Extensions */,
 				91B1961C1F59167A00831E52 /* Utilities */,
 				91C792CE1F593E42004DE3A7 /* Services */,
 				9146B77F1F58E23700D25394 /* Model */,
@@ -300,6 +317,7 @@
 				91CC121D1F57CE0500F546EA /* ChatVC.swift in Sources */,
 				9145591F1F5A36CD002E0EEE /* AvatarPickerVC.swift in Sources */,
 				914559191F59F399002E0EEE /* RoundedButton.swift in Sources */,
+				914994451F5A4A9D00ACD366 /* CircleImage.swift in Sources */,
 				9146B7811F58E27900D25394 /* ChannelVC.swift in Sources */,
 				9145591D1F5A253A002E0EEE /* UserDataService.swift in Sources */,
 				91FCBB271F591ED00027BC77 /* CreateAccountVC.swift in Sources */,
@@ -307,7 +325,9 @@
 				91B196201F591C9400831E52 /* LoginVC.swift in Sources */,
 				91B1961B1F58EEDB00831E52 /* GradientView.swift in Sources */,
 				914559211F5A3813002E0EEE /* AvatarCell.swift in Sources */,
+				914994471F5A4CE000ACD366 /* CustomTextField.swift in Sources */,
 				91CC121B1F57CE0500F546EA /* AppDelegate.swift in Sources */,
+				9149944A1F5A519F00ACD366 /* DismissKeyboard.swift in Sources */,
 				91B196191F58EB1200831E52 /* SWRevealViewController.m in Sources */,
 				91B1961E1F59168E00831E52 /* Constants.swift in Sources */,
 			);

@@ -41,4 +41,8 @@ struct Constants {
         static let AvatarCell = "AvatarCell"
     }
     
+    struct Notifications {
+        static let userDataDidChange = Notification.Name("userDataDidChange")
+    }
+    
 }
