@@ -24,16 +24,9 @@ class CreateAccountVC: UIViewController {
     
     @IBAction func createAccountButtonPressed(_ sender: Any) {
         guard let email = emailTextField.text, email != "", let password = passwordTextField.text, password != "", let name = usernameTextField.text, name != "" else { return }
-        AuthService.instance.registerUser(email, password) { success in
+        AuthService.instance.registerUser(email, password, name) { success in
             if success {
-                AuthService.instance.loginUser(email, password, completionHandler: { success in
-                    if success {
-                        AuthService.instance.createUser(name, email, self.avatarName, self.avatarColor, completionHandler: { success in
-                            print(UserDataService.instance.name, UserDataService.instance.avatarName)
-                            self.performSegue(withIdentifier: Constants.Identifiers.undwindToChannel, sender: nil)
-                        })
-                    }
-                })
+                self.performSegue(withIdentifier: Constants.Identifiers.undwindToChannel, sender: nil)
             }
         }
     }

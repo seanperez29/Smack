@@ -36,7 +36,7 @@ class AuthService {
         }
     }
     
-    func registerUser(_ email: String, _ password: String, completionHandler: @escaping Constants.CompletionHandler) {
+    func registerUser(_ email: String, _ password: String, _ name: String, completionHandler: @escaping Constants.CompletionHandler) {
         let body: [String: Any] = ["email": email.lowercased(), "password": password]
         Alamofire.request(Constants.URL.urlRegister, method: .post, parameters: body, encoding: JSONEncoding.default, headers: Constants.Headers.standardHeader).responseString { response in
             guard response.result.error == nil else {
@@ -44,11 +44,11 @@ class AuthService {
                 debugPrint(response.result.error as Any)
                 return
             }
-            completionHandler(true)
+            self.loginUser(email, password, name, completionHandler: completionHandler)
         }
     }
     
-    func loginUser(_ email: String, _ password: String, completionHandler: @escaping Constants.CompletionHandler) {
+    func loginUser(_ email: String, _ password: String, _ name: String, completionHandler: @escaping Constants.CompletionHandler) {
         let body: [String: Any] = ["email": email.lowercased(), "password": password]
         Alamofire.request(Constants.URL.urlLogin, method: .post, parameters: body, encoding: JSONEncoding.default, headers: Constants.Headers.standardHeader).responseJSON { response in
             guard response.result.error == nil else {
@@ -61,11 +61,11 @@ class AuthService {
             self.userEmail = json["user"].stringValue
             self.authToken = json["token"].stringValue
             self.isLoggedIn = true
-            completionHandler(true)
+            self.createUser(name, email, completionHandler: completionHandler)
         }
     }
     
-    func createUser(_ name: String, _ email: String, _ avatarName: String, _ avatarColor: String, completionHandler: @escaping Constants.CompletionHandler) {
+    func createUser(_ name: String, _ email: String, _ avatarName: String = "smackProfileIcon", _ avatarColor: String = "[0.5, 0.5, 0.5, 1]", completionHandler: @escaping Constants.CompletionHandler) {
         let body: [String: Any] = ["name": name, "email": email.lowercased(), "avatarName": avatarName, "avatarColor": avatarColor]
         Alamofire.request(Constants.URL.createUser, method: .post, parameters: body, encoding: JSONEncoding.default, headers: Constants.Headers.tokenHeader).responseJSON { response in
             guard response.result.error == nil else {
