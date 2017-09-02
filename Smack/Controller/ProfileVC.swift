@@ -40,10 +40,8 @@ class ProfileVC: UIViewController {
     
 }
 
-extension ProfileVC: UIGestureRecognizerDelegate {
+extension ProfileVC: ViewControllerIsDismissableByTap, UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         return (touch.view === self.view)
     }
 }
-
-extension ProfileVC: ViewControllerIsDismissableByTap{}

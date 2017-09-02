@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ViewControllerIsDismissableByTap {
+protocol ViewControllerIsDismissableByTap where Self: UIGestureRecognizerDelegate {
     func registerForViewControllerDismissal()
 }
