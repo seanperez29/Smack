@@ -32,7 +32,7 @@ class CreateAccountVC: UIViewController {
     }
     
     @IBAction func chooseAvatarPressed(_ sender: Any) {
-
+        performSegue(withIdentifier: Constants.Identifiers.avatarPickerVC, sender: nil)
     }
     
     @IBAction func generateBackgroundColorPressed(_ sender: Any) {

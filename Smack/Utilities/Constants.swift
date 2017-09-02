@@ -16,6 +16,7 @@ struct Constants {
         static let loginVC = "loginVC"
         static let createAccountVC = "createAccountVC"
         static let undwindToChannel = "unwindToChannel"
+        static let avatarPickerVC = "avatarPickerVC"
     }
     
     struct UserDefaults {
@@ -34,6 +35,10 @@ struct Constants {
     struct Headers {
         static let standardHeader = ["Content-Type": "application/json; charset=utf-8"]
         static let tokenHeader = ["Authorization": "Bearer \(AuthService.instance.authToken)", "Content-Type": "application/json; charset=utf-8"]
+    }
+    
+    struct Cells {
+        static let AvatarCell = "AvatarCell"
     }
     
 }
