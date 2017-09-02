@@ -41,6 +41,7 @@ struct Constants {
     
     struct Cells {
         static let AvatarCell = "AvatarCell"
+        static let ChannelCell = "ChannelCell"
     }
     
     struct Notifications {

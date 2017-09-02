@@ -119,7 +119,7 @@
                                 <rect key="frame" x="0.0" y="125" width="375" height="427"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QEL-d0-idQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChannelCell" id="QEL-d0-idQ" customClass="ChannelCell" customModule="Smack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QEL-d0-idQ" id="8zH-FN-hlz">
@@ -139,8 +139,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="channelNameLabel" destination="Fm0-AF-45e" id="Cfp-yF-RW5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Wrn-GO-QUf" id="EoK-5b-JLX"/>
+                                    <outlet property="delegate" destination="Wrn-GO-QUf" id="XFb-Xh-2a8"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrJ-YM-vIs">
                                 <rect key="frame" x="115" y="593" width="46" height="33"/>
@@ -176,6 +183,7 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="vrJ-YM-vIs" id="bxs-rY-wET"/>
+                        <outlet property="tableView" destination="U0T-7u-dtl" id="g0J-zm-L9B"/>
                         <outlet property="userImage" destination="RMV-JJ-Esv" id="ghb-uA-0M2"/>
                         <segue destination="F1g-ua-43Q" kind="show" identifier="loginVC" id="EKM-dr-VAE"/>
                     </connections>
