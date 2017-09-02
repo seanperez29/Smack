@@ -232,7 +232,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="dRV-vJ-8EG">
                                 <rect key="frame" x="62" y="160" width="251" height="106"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wtE-Oi-Jul" customClass="CustomTextField" customModule="Smack" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wtE-Oi-Jul" customClass="CustomTextField" customModule="Smack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>
                                         <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -264,6 +264,10 @@
                                     <action selector="createAccountButtonPressed:" destination="F1g-ua-43Q" eventType="touchUpInside" id="8S5-t0-bsw"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="KHU-fm-NHJ">
+                                <rect key="frame" x="169" y="266" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -281,6 +285,7 @@
                             <constraint firstItem="tf2-jC-Bs1" firstAttribute="top" secondItem="64G-c9-Srf" secondAttribute="bottom" id="cfl-UO-fbl"/>
                             <constraint firstItem="64G-c9-Srf" firstAttribute="top" secondItem="dRV-vJ-8EG" secondAttribute="bottom" constant="40" id="equ-Jf-Gb2"/>
                             <constraint firstItem="vty-wg-ZpI" firstAttribute="height" secondItem="Fne-84-mwX" secondAttribute="width" multiplier="0.075" id="frg-e0-ezZ"/>
+                            <constraint firstItem="KHU-fm-NHJ" firstAttribute="centerX" secondItem="Fne-84-mwX" secondAttribute="centerX" id="g6d-Xm-28h"/>
                             <constraint firstItem="64G-c9-Srf" firstAttribute="width" secondItem="Fne-84-mwX" secondAttribute="width" multiplier="0.67" id="jgo-Rz-caW"/>
                             <constraint firstItem="wtE-Oi-Jul" firstAttribute="height" secondItem="Fne-84-mwX" secondAttribute="height" multiplier="0.045" id="jrl-n1-qyZ"/>
                             <constraint firstItem="j2K-W9-L5R" firstAttribute="width" secondItem="Fne-84-mwX" secondAttribute="width" multiplier="0.13" id="lZo-6u-2eo"/>
@@ -292,10 +297,14 @@
                             <constraint firstItem="RIY-lk-nOE" firstAttribute="trailing" secondItem="vty-wg-ZpI" secondAttribute="trailing" constant="20" id="tf1-A5-DHu"/>
                             <constraint firstItem="64G-c9-Srf" firstAttribute="centerX" secondItem="Fne-84-mwX" secondAttribute="centerX" id="xEq-9z-TIM"/>
                             <constraint firstItem="y6M-em-NES" firstAttribute="width" secondItem="Fne-84-mwX" secondAttribute="width" multiplier="0.67" id="xdd-nk-dHu"/>
+                            <constraint firstItem="KHU-fm-NHJ" firstAttribute="top" secondItem="dRV-vJ-8EG" secondAttribute="bottom" id="zaR-cZ-ake"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RIY-lk-nOE"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="KHU-fm-NHJ" id="KZu-hV-cMM"/>
+                        <outlet property="emailTextField" destination="wtE-Oi-Jul" id="3Fn-iK-pCH"/>
+                        <outlet property="passwordTextField" destination="y6M-em-NES" id="AQT-9Z-tdA"/>
                         <segue destination="Y5T-UQ-JUk" kind="show" identifier="createAccountVC" id="bF4-lo-sGy"/>
                     </connections>
                 </viewController>

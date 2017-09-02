@@ -20,6 +20,11 @@ class ChannelVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: Constants.Notifications.userDataDidChange, object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupUserInfo()
+    }
+    
     @IBAction func loginButtonPressed(_ sender: Any) {
         if AuthService.instance.isLoggedIn {
             let profileVC = ProfileVC()
@@ -27,11 +32,14 @@ class ChannelVC: UIViewController {
             present(profileVC, animated: true, completion: nil)
         } else {
             performSegue(withIdentifier: Constants.Identifiers.loginVC, sender: nil)
-
         }
     }
     
     @objc func userDataDidChange(_ notification: Notification) {
+        setupUserInfo()
+    }
+    
+    func setupUserInfo() {
         if AuthService.instance.isLoggedIn {
             loginButton.setTitle(UserDataService.instance.name, for: .normal)
             userImage.image = UIImage(named: UserDataService.instance.avatarName)
@@ -42,6 +50,5 @@ class ChannelVC: UIViewController {
             userImage.backgroundColor = .clear
         }
     }
-    
 
 }

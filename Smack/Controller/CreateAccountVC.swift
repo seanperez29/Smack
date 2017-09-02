@@ -20,7 +20,7 @@ class CreateAccountVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerForKeyboardDismissal()
-        enableActivityIndicator(false)
+        enableActivityIndicator(activityIndicator, false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,11 +36,11 @@ class CreateAccountVC: UIViewController {
     }
     
     @IBAction func createAccountButtonPressed(_ sender: Any) {
-        enableActivityIndicator(true)
         guard let email = emailTextField.text, email != "", let password = passwordTextField.text, password != "", let name = usernameTextField.text, name != "" else { return }
+        enableActivityIndicator(activityIndicator, true)
         AuthService.instance.registerUser(email, password, name) { success in
             if success {
-                self.enableActivityIndicator(false)
+                self.enableActivityIndicator(self.activityIndicator, false)
                 self.performSegue(withIdentifier: Constants.Identifiers.undwindToChannel, sender: nil)
                 NotificationCenter.default.post(name: Constants.Notifications.userDataDidChange, object: nil)
             }
@@ -63,13 +63,6 @@ class CreateAccountVC: UIViewController {
             self.userImage.backgroundColor = self.bgColor
         }
     }
-    
-    func enableActivityIndicator(_ enabled: Bool) {
-        activityIndicator.isHidden = !enabled
-        enabled ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
-        view.isUserInteractionEnabled = !enabled
-    }
-    
     
     @IBAction func closeButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: Constants.Identifiers.undwindToChannel, sender: nil)

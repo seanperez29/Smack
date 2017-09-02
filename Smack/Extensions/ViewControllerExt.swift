@@ -1,12 +1,12 @@
 //
-//  DismissExt.swift
+//  ViewControllerExt.swift
 //  Smack
 //
 //  Created by Sean Perez on 9/1/17.
 //  Copyright © 2017 SeanPerez. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIViewController {
     
@@ -21,6 +21,12 @@ extension UIViewController {
     
     @objc func dismissViewController() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func enableActivityIndicator(_ activityIndicator: UIActivityIndicatorView, _ enabled: Bool) {
+        activityIndicator.isHidden = !enabled
+        enabled ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
+        view.isUserInteractionEnabled = !enabled
     }
     
 }
