@@ -14,12 +14,16 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userImage: UIImageView!
-    var avatarName = "smackProfileIcon"
-    var avatarColor = "[0.5, 0.5, 0.5, 1]"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if UserDataService.instance.avatarName != "" {
+            userImage.image = UIImage(named: UserDataService.instance.avatarName)
+        }
     }
     
     @IBAction func createAccountButtonPressed(_ sender: Any) {

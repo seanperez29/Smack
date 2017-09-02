@@ -65,8 +65,8 @@ class AuthService {
         }
     }
     
-    func createUser(_ name: String, _ email: String, _ avatarName: String = "smackProfileIcon", _ avatarColor: String = "[0.5, 0.5, 0.5, 1]", completionHandler: @escaping Constants.CompletionHandler) {
-        let body: [String: Any] = ["name": name, "email": email.lowercased(), "avatarName": avatarName, "avatarColor": avatarColor]
+    func createUser(_ name: String, _ email: String, _ avatarColor: String = "[0.5, 0.5, 0.5, 1]", completionHandler: @escaping Constants.CompletionHandler) {
+        let body: [String: Any] = ["name": name, "email": email.lowercased(), "avatarName": UserDataService.instance.avatarName, "avatarColor": avatarColor]
         Alamofire.request(Constants.URL.createUser, method: .post, parameters: body, encoding: JSONEncoding.default, headers: Constants.Headers.tokenHeader).responseJSON { response in
             guard response.result.error == nil else {
                 completionHandler(false)

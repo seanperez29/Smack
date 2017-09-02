@@ -19,7 +19,13 @@ class AvatarCell: UICollectionViewCell {
         }
     }
     
-    func configureCell(_ imageName: String) {
-        avatarImage.image = UIImage(named: imageName)
+    func configureCell(forAvatarColor color: AvatarColor, atIndex index: Int) {
+        if color == .dark {
+            avatarImage.image = UIImage(named: "dark\(index)")
+            layer.backgroundColor = UIColor.lightGray.cgColor
+        } else {
+            avatarImage.image = UIImage(named: "light\(index)")
+            layer.backgroundColor = UIColor.darkGray.cgColor
+        }
     }
 }
