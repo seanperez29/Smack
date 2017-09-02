@@ -15,7 +15,6 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
     var bgColor: UIColor?
     
     override func viewDidLoad() {
@@ -59,6 +58,7 @@ class CreateAccountVC: UIViewController {
             colorArray.append(randomNumber)
         }
         bgColor = UIColor(red: colorArray[0], green: colorArray[1], blue: colorArray[2], alpha: 1.0)
+        UserDataService.instance.updateAvatarColor("[\(colorArray[0]), \(colorArray[1]), \(colorArray[2]), 1]")
         UIView.animate(withDuration: 0.2) {
             self.userImage.backgroundColor = self.bgColor
         }
