@@ -13,6 +13,6 @@ struct Channel: Decodable {
     private(set) var _id: String
     private(set) var name: String
     private(set) var description: String
-    private(set) var __v: Int
+    private(set) var __v: Int?
     
 }
