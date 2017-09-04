@@ -20,6 +20,9 @@ class ChannelCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         if selected {
             layer.backgroundColor = UIColor(white: 1, alpha: 0.2).cgColor
+            UIView.animate(withDuration: 0.5) {
+                self.setSelected(false, animated: true)
+            }
         } else {
             layer.backgroundColor = UIColor.clear.cgColor
         }
