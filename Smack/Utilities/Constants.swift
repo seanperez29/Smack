@@ -32,7 +32,7 @@ struct Constants {
         static let createUser = "\(Constants.URL.BaseUrl)user/add"
         static let findUserByEmail = "\(Constants.URL.BaseUrl)user/byEmail/"
         static let getChannels = "\(Constants.URL.BaseUrl)channel/"
-        static let getMessages = "\(Constants.URL.BaseUrl)message/byChannel"
+        static let getMessages = "\(Constants.URL.BaseUrl)message/byChannel/"
     }
     
     struct Headers {
@@ -43,6 +43,7 @@ struct Constants {
     struct Cells {
         static let AvatarCell = "AvatarCell"
         static let ChannelCell = "ChannelCell"
+        static let MessageCell = "MessageCell"
     }
     
     struct Notifications {

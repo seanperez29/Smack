@@ -13,6 +13,7 @@ class ChatVC: UIViewController {
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var channelNameLabel: UILabel!
     @IBOutlet weak var messageTextField: UITextField!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,8 @@ class ChatVC: UIViewController {
                 NotificationCenter.default.post(name: Constants.Notifications.userDataDidChange, object: nil)
             }
         }
+        tableView.estimatedRowHeight = 80
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     @IBAction func sendMessageButtonPressed(_ sender: Any) {
@@ -76,9 +79,24 @@ class ChatVC: UIViewController {
     func getMessages() {
         guard let channelId = MessageService.instance.selectedChannel?._id else { return }
         MessageService.instance.getAllMessagesForChannel(channelId) { success in
-            
+            self.tableView.reloadData()
         }
     }
+
+}
+
+extension ChatVC: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.messages.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.MessageCell, for: indexPath) as! MessageCell
+        let message = MessageService.instance.messages[indexPath.row]
+        cell.configureCell(message)
+        return cell
+    }
+    
+    
 
 }
 

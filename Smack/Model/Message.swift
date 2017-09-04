@@ -17,7 +17,7 @@ struct Message: Decodable {
     private(set) var userName: String
     private(set) var userAvatar: String
     private(set) var userAvatarColor: String
-    private(set) var __v: String?
+    private(set) var __v: Int?
     private(set) var timeStamp: String
 
 }
