@@ -14,6 +14,7 @@
 		9145591F1F5A36CD002E0EEE /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9145591E1F5A36CD002E0EEE /* AvatarPickerVC.swift */; };
 		914559211F5A3813002E0EEE /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914559201F5A3813002E0EEE /* AvatarCell.swift */; };
 		9146B7811F58E27900D25394 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9146B7801F58E27900D25394 /* ChannelVC.swift */; };
+		91482D611F5DFB2100DCD180 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91482D601F5DFB2100DCD180 /* KeyboardBoundView.swift */; };
 		914994451F5A4A9D00ACD366 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914994441F5A4A9D00ACD366 /* CircleImage.swift */; };
 		914994471F5A4CE000ACD366 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914994461F5A4CE000ACD366 /* CustomTextField.swift */; };
 		9149944A1F5A519F00ACD366 /* ViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914994491F5A519F00ACD366 /* ViewControllerExt.swift */; };
@@ -48,6 +49,7 @@
 		9145591E1F5A36CD002E0EEE /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
 		914559201F5A3813002E0EEE /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		9146B7801F58E27900D25394 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
+		91482D601F5DFB2100DCD180 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
 		914994441F5A4A9D00ACD366 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		914994461F5A4CE000ACD366 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		914994491F5A519F00ACD366 /* ViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExt.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				911EC0861F5B166F0045C541 /* XIBs */,
 				91CC121E1F57CE0500F546EA /* Main.storyboard */,
 				91CC12231F57CE0500F546EA /* LaunchScreen.storyboard */,
+				91482D601F5DFB2100DCD180 /* KeyboardBoundView.swift */,
 				91B1961A1F58EEDB00831E52 /* GradientView.swift */,
 				914559181F59F399002E0EEE /* RoundedButton.swift */,
 				914559201F5A3813002E0EEE /* AvatarCell.swift */,
@@ -376,6 +379,7 @@
 				911EC0841F5B16430045C541 /* ProfileVC.swift in Sources */,
 				9149944A1F5A519F00ACD366 /* ViewControllerExt.swift in Sources */,
 				91C88CC61F5D2258003DD5C1 /* Message.swift in Sources */,
+				91482D611F5DFB2100DCD180 /* KeyboardBoundView.swift in Sources */,
 				91B196191F58EB1200831E52 /* SWRevealViewController.m in Sources */,
 				91B1961E1F59168E00831E52 /* Constants.swift in Sources */,
 			);

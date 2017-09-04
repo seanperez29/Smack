@@ -34,7 +34,7 @@ extension UIViewController {
 extension ViewControllerIsDismissableByTap where Self: UIViewController {
     func registerForViewControllerDismissal() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissViewController))
-        tap.delegate = (self as! UIGestureRecognizerDelegate)
+        tap.delegate = (self as UIGestureRecognizerDelegate)
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
     }
