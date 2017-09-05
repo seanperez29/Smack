@@ -32,8 +32,9 @@ class ChatVC: UIViewController {
                 NotificationCenter.default.post(name: Constants.Notifications.userDataDidChange, object: nil)
             }
         }
-        SocketService.instance.getChatMessage { success in
-            if success {
+        SocketService.instance.getChatMessage { message in
+            if message.channelId == MessageService.instance.selectedChannel?._id && AuthService.instance.isLoggedIn {
+                MessageService.instance.messages.append(message)
                 self.tableView.reloadData()
                 if MessageService.instance.messages.count > 0 {
                     let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
