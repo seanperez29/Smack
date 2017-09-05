@@ -15,6 +15,7 @@ class ChatVC: UIViewController {
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendMessageButton: UIButton!
+    @IBOutlet weak var typingInProgressLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,15 +41,42 @@ class ChatVC: UIViewController {
                 }
             }
         }
+        SocketService.instance.getTypingUsers { typingUsers in
+            guard let channelId = MessageService.instance.selectedChannel?._id else { return }
+            var names = ""
+            var numberOfTypers = 0
+            for (typingUser, channel) in typingUsers {
+                if typingUser != UserDataService.instance.name && channel == channelId {
+                    if names == "" {
+                        names = typingUser
+                    } else {
+                        names = "\(names), \(typingUser)"
+                    }
+                    numberOfTypers += 1
+                }
+            }
+            if numberOfTypers > 0 && AuthService.instance.isLoggedIn {
+                var verb = "is"
+                if numberOfTypers > 1 {
+                    verb = "are"
+                }
+                self.typingInProgressLabel.text = "\(names) \(verb) typing a message"
+            } else {
+                self.typingInProgressLabel.text = ""
+            }
+        }
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     @IBAction func messageEditing(_ sender: Any) {
+        guard let channelId = MessageService.instance.selectedChannel?._id else { return }
         if messageTextField.text == "" {
             sendMessageButton.isHidden = true
+            SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channelId)
         } else {
             sendMessageButton.isHidden = false
+            SocketService.instance.socket.emit("startType", UserDataService.instance.name, channelId)
         }
     }
     
@@ -59,6 +87,7 @@ class ChatVC: UIViewController {
                 if success {
                     self.messageTextField.text = ""
                     self.messageTextField.resignFirstResponder()
+                    SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channelId)
                 }
             })
         }

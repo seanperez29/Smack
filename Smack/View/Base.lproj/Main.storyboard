@@ -131,15 +131,23 @@
                                     <outlet property="delegate" destination="Dua-S7-GBy" id="74v-9A-DWx"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ir7-BM-ZBF">
+                                <rect key="frame" x="8" y="686" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PBz-3B-Pms" firstAttribute="top" secondItem="ir7-BM-ZBF" secondAttribute="bottom" constant="6" id="44H-9h-LfG"/>
                             <constraint firstItem="IPF-Jo-jkr" firstAttribute="bottom" secondItem="PBz-3B-Pms" secondAttribute="bottom" id="BRm-RR-bF8"/>
                             <constraint firstItem="PBz-3B-Pms" firstAttribute="height" secondItem="KTR-1R-Fbr" secondAttribute="height" multiplier="0.06" id="EjZ-fu-cjM"/>
                             <constraint firstItem="PBz-3B-Pms" firstAttribute="top" secondItem="YeY-wo-AZa" secondAttribute="bottom" constant="30" id="HUv-KW-9of"/>
                             <constraint firstItem="8vb-R5-2sa" firstAttribute="trailing" secondItem="YeY-wo-AZa" secondAttribute="trailing" id="VuP-Dd-0uf"/>
                             <constraint firstItem="fAh-VJ-V4X" firstAttribute="trailing" secondItem="8vb-R5-2sa" secondAttribute="trailing" id="W85-Ji-yJL"/>
                             <constraint firstItem="8vb-R5-2sa" firstAttribute="trailing" secondItem="IPF-Jo-jkr" secondAttribute="trailing" constant="8" id="X7j-Xt-JkM"/>
+                            <constraint firstItem="ir7-BM-ZBF" firstAttribute="leading" secondItem="8vb-R5-2sa" secondAttribute="leading" constant="8" id="XnH-Kf-0nT"/>
                             <constraint firstItem="8vb-R5-2sa" firstAttribute="trailing" secondItem="PBz-3B-Pms" secondAttribute="trailing" id="erC-jn-iAC"/>
                             <constraint firstItem="PBz-3B-Pms" firstAttribute="bottom" secondItem="8vb-R5-2sa" secondAttribute="bottom" id="g5N-jQ-k9b"/>
                             <constraint firstItem="IPF-Jo-jkr" firstAttribute="top" secondItem="PBz-3B-Pms" secondAttribute="top" id="gDX-az-HUu"/>
@@ -158,6 +166,7 @@
                         <outlet property="messageTextField" destination="PBz-3B-Pms" id="ajH-XH-XlP"/>
                         <outlet property="sendMessageButton" destination="IPF-Jo-jkr" id="gJG-qN-Xnw"/>
                         <outlet property="tableView" destination="YeY-wo-AZa" id="mMj-0q-gsT"/>
+                        <outlet property="typingInProgressLabel" destination="ir7-BM-ZBF" id="4oP-Da-N9b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Owd-7v-ydU" userLabel="First Responder" sceneMemberID="firstResponder"/>
