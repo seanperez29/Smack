@@ -14,23 +14,42 @@ class ChatVC: UIViewController {
     @IBOutlet weak var channelNameLabel: UILabel!
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sendMessageButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sendMessageButton.isHidden = true
         menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+        self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: Constants.Notifications.userDataDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: Constants.Notifications.channelSelected, object: nil)
         view.bindToKeyboard()
+        revealViewController().delegate = self
         registerForKeyboardDismissal()
         if AuthService.instance.isLoggedIn {
             AuthService.instance.findUserByEmail { success in
                 NotificationCenter.default.post(name: Constants.Notifications.userDataDidChange, object: nil)
             }
         }
+        SocketService.instance.getChatMessage { success in
+            if success {
+                self.tableView.reloadData()
+                if MessageService.instance.messages.count > 0 {
+                    let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: false)
+                }
+            }
+        }
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    @IBAction func messageEditing(_ sender: Any) {
+        if messageTextField.text == "" {
+            sendMessageButton.isHidden = true
+        } else {
+            sendMessageButton.isHidden = false
+        }
     }
     
     @IBAction func sendMessageButtonPressed(_ sender: Any) {
@@ -50,6 +69,7 @@ class ChatVC: UIViewController {
             onLoginGetMessages()
         } else {
             channelNameLabel.text = "Please Log In"
+            tableView.reloadData()
         }
     }
     
@@ -96,7 +116,15 @@ extension ChatVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    
+}
 
+extension ChatVC: SWRevealViewControllerDelegate {
+    func revealController(_ revealController: SWRevealViewController!, didMoveTo position: FrontViewPosition) {
+        if position == .right {
+            view.addGestureRecognizer(revealViewController().tapGestureRecognizer())
+        } else {
+            registerForKeyboardDismissal()
+        }
+    }
 }
 

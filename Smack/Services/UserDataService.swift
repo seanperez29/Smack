@@ -43,6 +43,7 @@ class UserDataService {
         AuthService.instance.userEmail = ""
         AuthService.instance.authToken = ""
         MessageService.instance.clearChannels()
+        MessageService.instance.clearMessages()
     }
     
     func returnUIColor(_ components: String) -> UIColor {
